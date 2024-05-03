@@ -24,11 +24,13 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings
-                = <&macro_press   &kp LALT>
-                , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N5 &kp KP_N1>
-                , <&macro_release &kp LALT>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N1 &kp KP_N5 &kp KP_N1>,
+                <&macro_release>,
+                <&kp LALT>;
         };
     };
 
@@ -91,10 +93,20 @@
 
             bindings = <
 &kp F1  &kp F2           &kp F3             &kp F4      &kp F5           &kp F6                           &kp F7     &kp F8     &kp F9     &kp F10    &kp F11               &kp F12
-&trans  &kp PRINTSCREEN  &kp HOME           &kp UP      &kp END          &kp GRAVE                        &trans     &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans                &kp DEL
+&trans  &kp PRINTSCREEN  &kp HOME           &kp UP      &kp END          &kp GRAVE                        &trans     &kp KP_N7  &kp KP_N8  &kp KP_N9  &dash                 &kp DEL
 &trans  &kp SCROLLLOCK   &kp LEFT           &kp DOWN    &kp RIGHT        &kp PAGE_UP                      &trans     &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans                &trans
-&trans  &kp PAUSE_BREAK  &kp C_VOLUME_DOWN  &kp K_MUTE  &kp C_VOLUME_UP  &kp PAGE_DOWN  &trans    &trans  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp NON_US_BACKSLASH  &trans
+&trans  &kp PAUSE_BREAK  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &kp PAGE_DOWN  &trans    &trans  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp NON_US_BACKSLASH  &trans
                                             &trans      &trans           &trans         &trans    &trans  &trans     &trans     &trans
+            >;
+        };
+
+        game {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp Q   &kp W   &kp E   &kp R                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp A   &kp S   &kp D   &kp F                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp Z   &kp X   &kp C   &kp V   &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
     };
