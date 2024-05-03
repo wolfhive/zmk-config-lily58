@@ -22,8 +22,8 @@
         dash: dash {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <30>;
+            tap-ms = <30>;
             bindings =
                 <&macro_press>,
                 <&kp LALT>,
@@ -75,11 +75,21 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp N1     &kp N2  &kp N3  &kp N4     &kp N5        &kp N6                         &kp N7  &kp N8         &kp N9     &kp N0   &kp MINUS  &kp EQUAL
-&kp ESC    &kp Q   &kp W   &kp E      &kp R         &kp T                          &kp Y   &kp U          &kp I      &kp O    &kp P      &kp BACKSPACE
-&kp TAB    &kp A   &kp S   &kp D      &kp F         &kp G                          &kp H   &kp J          &kp K      &kp L    &kp SEMI   &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C      &kp V         &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M          &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT
-                           &kp LCTRL  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp RET   &mo 1   &kp RIGHT_ALT  &kp RCTRL
+&kp N1     &kp N2  &kp N3  &kp N4     &kp N5    &kp N6                          &kp N7  &kp N8    &kp N9     &kp N0   &kp MINUS  &kp EQUAL
+&kp ESC    &kp Q   &kp W   &kp E      &kp R     &kp T                           &kp Y   &kp U     &kp I      &kp O    &kp P      &kp BACKSPACE
+&kp TAB    &kp A   &kp S   &kp D      &kp F     &kp G                           &kp H   &kp J     &kp K      &kp L    &kp SEMI   &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C      &kp V     &kp B   &kp LBKT     &kp RBKT   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT
+                           &kp LCTRL  &kp LALT  &mo 2   &kp SPACE    &kp ENTER  &mo 2   &kp RALT  &kp RCTRL
+            >;
+        };
+
+        game {
+            bindings = <
+&none    &none       &kp N1  &kp N2     &kp N3    &kp N4                          &none  &none  &none  &none  &none  &none
+&kp F12  &kp ESC     &kp Q   &kp W      &kp E     &kp R                           &none  &none  &none  &none  &none  &none
+&kp F5   &kp TAB     &kp A   &kp S      &kp D     &kp F                           &none  &none  &none  &none  &none  &none
+&kp F9   &kp LSHIFT  &kp Z   &kp X      &kp C     &kp V      &kp G        &tog 1  &none  &none  &none  &none  &none  &none
+                             &kp LCTRL  &kp LALT  &kp ENTER  &kp SPACE    &none   &mo 2  &none  &none
             >;
         };
 
@@ -92,21 +102,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F1  &kp F2           &kp F3             &kp F4      &kp F5           &kp F6                           &kp F7     &kp F8     &kp F9     &kp F10    &kp F11               &kp F12
-&trans  &kp PRINTSCREEN  &kp HOME           &kp UP      &kp END          &kp GRAVE                        &trans     &kp KP_N7  &kp KP_N8  &kp KP_N9  &dash                 &kp DEL
-&trans  &kp SCROLLLOCK   &kp LEFT           &kp DOWN    &kp RIGHT        &kp PAGE_UP                      &trans     &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans                &trans
-&trans  &kp PAUSE_BREAK  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &kp PAGE_DOWN  &trans    &trans  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp NON_US_BACKSLASH  &trans
-                                            &trans      &trans           &trans         &trans    &trans  &trans     &trans     &trans
-            >;
-        };
-
-        game {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp Q   &kp W   &kp E   &kp R                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp A   &kp S   &kp D   &kp F                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp Z   &kp X   &kp C   &kp V   &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&kp F1  &kp F2           &kp F3             &kp F4      &kp F5           &kp F6                           &kp F7           &kp F8     &kp F9     &kp F10    &kp F11       &kp F12
+&trans  &kp PRINTSCREEN  &kp HOME           &kp UP      &kp END          &kp GRAVE                        &kp KP_DIVIDE    &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &kp DEL
+&trans  &kp SCROLLLOCK   &kp LEFT           &kp DOWN    &kp RIGHT        &kp PAGE_UP                      &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &kp BACKSLASH
+&trans  &kp PAUSE_BREAK  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &kp PAGE_DOWN  &dash     &tog 1  &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_COMMA  &trans
+                                            &trans      &trans           &trans         &trans    &trans  &trans           &trans     &trans
             >;
         };
     };
