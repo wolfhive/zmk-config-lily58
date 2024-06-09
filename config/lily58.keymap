@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -85,7 +86,7 @@
 
         game {
             bindings = <
-&none    &none       &kp N1  &kp N2     &kp N3    &kp N4                          &none  &none  &none  &none  &none  &none
+&none    &none       &kp N1  &kp N2     &kp N3    &kp N4                          &none  &none  &none  &none  &none  &bt BT_CLR_ALL
 &kp F12  &kp ESC     &kp Q   &kp W      &kp E     &kp R                           &none  &none  &none  &none  &none  &none
 &kp F5   &kp TAB     &kp A   &kp S      &kp D     &kp F                           &none  &none  &none  &none  &none  &none
 &kp F9   &kp LSHIFT  &kp Z   &kp X      &kp C     &kp V      &kp G        &tog 1  &none  &none  &none  &none  &none  &none
