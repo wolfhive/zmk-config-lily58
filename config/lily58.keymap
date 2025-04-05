@@ -9,6 +9,33 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    kscan: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row"; // Для Lily58 диоды подключены от столбцов к строкам
+        wakeup-source;
+
+        // Настройки строк (rows) для Lily58 (левая и правая половины)
+        row-gpios = <
+            &gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)  // ROW0 (P0.10)
+            &gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)   // ROW1 (P0.09)
+            &gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)   // ROW2 (P0.08)
+            &gpio0 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)   // ROW3 (P0.07)
+            &gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)   // ROW4 (P0.06)
+        >;
+
+        // Настройки столбцов (cols) для Lily58 (левая и правая половины)
+        col-gpios = <
+            &gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)    // COL0 (P0.22)
+            &gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)     // COL1 (P0.20)
+            &gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)     // COL2 (P0.19)
+            &gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)     // COL3 (P0.18)
+            &gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)     // COL4 (P0.15)
+            &gpio0 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)     // COL5 (P0.14)
+            &gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)     // COL6 (P0.13)
+            &gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)     // COL7 (P0.12)
+        >;
+    };
+
     combos {
         compatible = "zmk,combos";
 
