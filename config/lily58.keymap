@@ -9,19 +9,28 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
-            timeout-ms = <50>;
+        combo_bt_0 {
             key-positions = <1 0>;
-            bindings = <&kp ESC>;
+            bindings = <&bt BT_SEL 0>;
+            slow-release;
+            require-prior-idle-ms = <200>;
         };
 
         combo_bt_clear {
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <2 3 4 5 6 7 8 9>;
+            slow-release;
+            require-prior-idle-ms = <200>;
+        };
+
+        combo_bt_1 {
+            bindings = <&bt BT_SEL 1>;
+            key-positions = <10 11>;
+            slow-release;
+            require-prior-idle-ms = <200>;
         };
     };
 
