@@ -29,18 +29,6 @@
             key-positions = <10 11 9 8>;
             require-prior-idle-ms = <500>;
         };
-
-        combo_lng_left {
-            bindings = <&macro_lng>;
-            key-positions = <42 53>;
-            layers = <0>;
-        };
-
-        combo_lng_right {
-            bindings = <&macro_lng>;
-            key-positions = <43 54>;
-            layers = <0>;
-        };
     };
 
     macros {
@@ -127,11 +115,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F1  &kp F2           &kp F3             &kp F4      &kp F5           &kp F6                                &kp F7           &kp F8     &kp F9     &kp F10    &kp F11       &kp F12
-&trans  &kp PRINTSCREEN  &kp HOME           &kp UP      &kp END          &kp GRAVE                             &kp KP_DIVIDE    &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &kp DEL
-&trans  &kp SCROLLLOCK   &kp LEFT           &kp DOWN    &kp RIGHT        &kp PAGE_UP                           &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &kp BACKSLASH
-&trans  &kp PAUSE_BREAK  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &kp PAGE_DOWN  &macro_dash    &to 2   &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT    &trans
-                                            &trans      &trans           &to 0          &trans         &trans  &to 0            &trans     &trans
+&kp F1  &kp F2           &kp F3             &kp F4      &kp F5           &kp F6                               &kp F7           &kp F8     &kp F9     &kp F10    &kp F11       &kp F12
+&trans  &kp PRINTSCREEN  &kp HOME           &kp UP      &kp END          &kp GRAVE                            &kp KP_DIVIDE    &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &kp DEL
+&trans  &kp SCROLLLOCK   &kp LEFT           &kp DOWN    &kp RIGHT        &kp PAGE_UP                          &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &kp BACKSLASH
+&trans  &kp PAUSE_BREAK  &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &kp PAGE_DOWN  &macro_lng    &to 2   &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT    &trans
+                                            &trans      &trans           &to 0          &trans        &trans  &to 0            &trans     &trans
             >;
         };
 
